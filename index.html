@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANGEL GARMS — Premium Y2K Archive & Resell</title>
+    <style>
+        /* --- Y2K GLAM DESIGN SYSTEM --- */
+        :root {
+            --baby-pink: #ffb7d5;
+            --barbie-pink: #ff4793;
+            --cherry-pink: #c2004d;
+            --soft-white: #fff9fb;
+            --angel-blue: #e3f2fd;
+            --font-display: 'Georgia', serif;
+            --font-body: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        /* --- GLOBAL STYLE & SCROLLBAR --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: var(--font-body);
+            background-color: var(--soft-white);
+            color: #1a1a1a;
+            background-image: 
+                radial-gradient(rgba(255, 183, 213, 0.2) 15%, transparent 16%),
+                radial-gradient(rgba(255, 71, 147, 0.1) 15%, transparent 16%);
+            background-size: 60px 60px;
+            background-position: 0 0, 30px 30px;
+        }
+
+        /* --- TICKER MARQUEE (VERY 2000s) --- */
+        .ticker {
+            background-color: var(--barbie-pink);
+            color: white;
+            padding: 8px 0;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            overflow: hidden;
+            white-space: nowrap;
+            border-bottom: 2px solid var(--cherry-pink);
+        }
+        .ticker-wrap {
+            display: inline-block;
+            animation: marquee 25s linear infinite;
+        }
+        .ticker-item {
+            display: inline-block;
+            padding-right: 50px;
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        header {
+            background: rgba(255, 249, 251, 0.85);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 71, 147, 0.2);
+            padding: 20px;
+        }
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #1a1a1a;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--barbie-pink);
+        }
+        
+        /* THE LOGO: ANGEL WINGS + APPLE SPARKLES */
+        .logo-area {
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+        }
+        .logo-wings {
+            font-size: 26px;
+            color: var(--baby-pink);
+            display: inline-block;
+            vertical-align: middle;
+            filter: drop-shadow(0 0 5px rgba(255,183,213,0.8));
+            animation: float 3s ease-in-out infinite alternate;
+        }
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: -1px;
+            color: var(--cherry-pink);
+            display: inline-block;
+            margin: 0 5px;
+            text-shadow: 2px 2px 0px var(--baby-pink);
+        }
+
+        /* --- HERO SECTION: GLOSSY MAKEUP STYLE --- */
+        .hero {
+            max-width: 1300px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .hero-text {
+            padding-right: 40px;
+        }
+        .hero-sparkle-tag {
+            color: var(--barbie-pink);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 52px;
+            font-weight: 400;
+            line-height: 1.1;
+            color: #000;
+            margin-bottom: 25px;
+        }
+        .hero h1 span {
+            color: var(--barbie-pink);
+            font-style: italic;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
+        .btn-glass {
+            display: inline-block;
+            background: linear-gradient(180deg, #ff7ebb 0%, var(--barbie-pink) 100%);
+            color: white;
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(255, 71, 147, 0.3);
+            border: 1px solid var(--cherry-pink);
+            transition: all 0.3s ease;
+        }
+        .btn-glass:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(255, 71, 147, 0.4);
+        }
+        
+        /* HERO VISUAL WITH APPLE CONTOURS */
+        .hero-image-wrap {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+        .hero-main-img {
+            width: 100%;
+            max-width: 450px;
+            height: 550px;
+            object-fit: cover;
+            border-radius: 120px 120px 20px 20px; /* Sleek structural shape */
+            border: 8px solid white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+        /* Y2K Graphic Elements */
+        .sparkle-sticker {
+            position: absolute;
+            font-size: 32px;
+            color: var(--barbie-pink);
+            text-shadow: 0 0 10px white;
+            animation: spin 8s linear infinite;
+        }
+
+        /* --- CLASSIFIED/SIMPLE CURATED GRID --- */
+        .catalog {
+            max-width: 1300px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+        .catalog-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 40px;
+            border-bottom: 2px solid rgba(255, 183, 213, 0.4);
+            padding-bottom: 15px;
+        }
+        .catalog-title {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 400;
+        }
+        .catalog-title span {
+            font-family: var(--font-body);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--barbie-pink);
+            display: block;
+            margin-bottom: 5px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 40px;
+        }
+        
+        /* CLEAN HIGH-END ITEM CARDS */
+        .item-card {
+            background: transparent;
+            position: relative;
+            cursor: pointer;
+        }
+        .item-img-container {
+            width: 100%;
+            height: 380px;
+            background-color: var(--angel-blue);
+            overflow: hidden;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            position: relative;
+            transition: border-radius 0.4s ease;
+        }
+        .item-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .item-card:hover .item-img-container img {
+            transform: scale(1.06);
+        }
+        .item-card:hover .item-img-container {
+            border-radius: 40px; /* Smooth interactive shape transformation */
+        }
+        .item-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 4px 10px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 20px;
+        }
+        .item-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .item-brand {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--barbie-pink);
+            margin-bottom: 4px;
+            font-weight: 700;
+        }
+        .item-name {
+            font-family: var(--font-display);
+            font-size: 16px;
+            color: #1a1a1a;
+        }
+        .item-price {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--cherry-pink);
+        }
+
+        /* --- FOOTER BRIM --- */
+        footer {
+            background-color: var(--soft-white);
+            border-top: 1px solid rgba(255, 71, 147, 0.2);
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 22px;
+            color: var(--cherry-pink);
+            margin-bottom: 15px;
+        }
+        .footer-text {
+            font-size: 12px;
+            color: #888;
+            letter-spacing: 1px;
+        }
+
+        /* --- KEYFRAMES & ANIMATIONS --- */
+        @keyframes marquee {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
+        }
+        @keyframes float {
