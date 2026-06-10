@@ -270,46 +270,178 @@
                 <li><a href="#">Shop All</a></li>
                 <li><a href="#">Dresses</a></li>
             </ul>
-            <div class="logo-area">
+            <div class="logo-area">   
                 <span class="logo-wings">ʚ</span>
                 <span class="logo-text">applekiss vault</span>
                 <span class="logo-wings">ɞ</span>
             </div>
+            <button class="cart-btn" aria-label="Shopping Cart" style="background: none; border: none; cursor: pointer; position: relative; display: flex; align-items: center; justify-content: center; padding: 5px; color: #c2004d; transition: transform 0.2s ease;">
+    <svg class="cart-icon" viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;">
+        <circle cx="9" cy="21" r="1"></circle>
+        <circle cx="20" cy="21" r="1"></circle>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+    </svg>
+    <span class="cart-count" id="global-cart-badge" style="position: absolute; top: -4px; right: -4px; background-color: #ff4793; color: white; font-size: 10px; font-weight: 700; width: 16px; height: 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(255, 71, 147, 0.4); transition: transform 0.2s ease;">0</span>
+</button>
             <ul class="nav-links">
                 <li><a href="#">Archive</a></li>
-                <li><a href="#">Bag (0)</a></li>
             </ul>
         </div>
     </header>
 
     <!-- MAIN BRAND HERO BANNER -->
-    <section class="hero">
-        <div>
-            <div class="hero-sparkle-tag">✨ ʚ High-Glam Luxury Archive ɞ ✨</div>
-            <h1>Pre-loved clothes, curated for <span>real angels</span>.</h1>
-            <p>A pristine digital closet of authenticated early-2000s garments, designer deadstock, and iconic silhouette statements. Clean, curated, and styled to pop like luxury cosmetics.</p>
-            <a href="#" class="btn-glass">Enter Vault</a>
-        </div>
-        <div class="hero-image-wrap">
-            <img class="hero-main-img" src="https://unsplash.com" alt="Y2K Fashion">
-        </div>
-    </section>
+ <section class="hero">
+    <div>
+        <div class="hero-sparkle-tag">✨ ʚ High-Glam Luxury Archive ɞ ✨</div>
+        <h1>Pre-loved clothes, curated for <span>real angels</span>.</h1>
+        <p>A pristine digital closet of authenticated early-2000s garments, designer deadstock, and iconic silhouette statements. Clean, curated, and styled to pop like luxury cosmetics.</p>
+        <a onclick="scrollToCatalog()" class="btn-glass" style="cursor: pointer;">Enter Vault</a>
+    </div>
+    <div class="hero-image-wrap">
+        <img class="hero-main-img" src="https://unsplash.com" alt="Y2K Fashion">
+    </div>
+</section>
 
     <!-- CLOTHING PRODUCT LIST -->
-    <section class="catalog">
+
+    <section class="catalog" id="catalog-section">
         <div class="catalog-header">
             <h2 class="catalog-title">Latest Curations 🍏</h2>
         </div>
         <div class="grid">
-            <!-- Product Item 1 -->
-            <div class="item-card">
-                <div class="item-img-container">
-                    <img src="https://unsplash.com" alt="Dress">
+            
+            <!-- Product Item 1: Blumarine Rhinestone Slip Dress -->
+            <div class="item-card" onclick="openProductPage('Blumarine', 'Rhinestone Slip Dress', '$240', '👗')">
+                <div class="item-img-container" style="display: flex; align-items: center; justify-content: center; background-color: var(--angel-blue); width: 100%; height: 300px; border-radius: 8px; font-size: 55px;">
+                    👗
                 </div>
                 <div class="item-brand">Blumarine</div>
                 <div class="item-name">Rhinestone Slip Dress</div>
                 <div class="item-price">$240</div>
             </div>
-            <!-- Product Item 2 -->
-            <div class="item-card">
-                <div class="item-img-container">
+
+            <!-- Product Item 2: Hysteric Glamour Cyber Mesh Top -->
+            <div class="item-card" onclick="openProductPage('Hysteric Glamour', 'Vintage Cyber Graphic Mesh Top', '$125', '👚')">
+                <div class="item-img-container" style="display: flex; align-items: center; justify-content: center; background-color: var(--angel-blue); width: 100%; height: 300px; border-radius: 8px; font-size: 55px;">
+                    👚
+                </div>
+                <div class="item-brand">Hysteric Glamour</div>
+                <div class="item-name">Vintage Cyber Graphic Mesh Top</div>
+                <div class="item-price">$125</div>
+            </div>
+
+            <!-- Product Item 3: Cop Copine Asymmetrical Skirt -->
+            <div class="item-card" onclick="openProductPage('Cop Copine', 'Asymmetrical Grunge Maxi Skirt', '$140', '🩰')">
+                <div class="item-img-container" style="display: flex; align-items: center; justify-content: center; background-color: var(--angel-blue); width: 100%; height: 300px; border-radius: 8px; font-size: 55px;">
+                    🩰
+                </div>
+                <div class="item-brand">Cop Copine</div>
+                <div class="item-name">Asymmetrical Grunge Maxi Skirt</div>
+                <div class="item-price">$140</div>
+            </div>
+
+            <!-- Product Item 4: Ed Hardy Rhinestone Low-Rise Denim -->
+            <div class="item-card" onclick="openProductPage('Ed Hardy', 'Rhinestone Low-Rise Denim', '$195', '👖')">
+                <div class="item-img-container" style="display: flex; align-items: center; justify-content: center; background-color: var(--angel-blue); width: 100%; height: 300px; border-radius: 8px; font-size: 55px;">
+                    👖
+                </div>
+                <div class="item-brand">Ed Hardy</div>
+                <div class="item-name">Rhinestone Low-Rise Denim</div>
+                <div class="item-price">$195</div>
+            </div>
+
+        </div>
+    </section>
+    <!-- ================= SEPARATE ITEM DETAIL VIEW ================= -->
+<div id="product-view" style="display: none;">
+    <main class="product-container" style="max-width: 1000px; margin: 60px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px;">
+        <!-- Left Side Frame: Image Display -->
+        <div class="product-gallery" style="text-align: center;">
+            <div id="pdp-image-target" style="width: 100%; max-width: 450px; height: 520px; background-color: #e3f2fd; border-radius: 24px; border: 6px solid white; box-shadow: 0 15px 30px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: center; font-size: 110px;">✨</div>
+        </div>
+
+        <!-- Right Side Frame: Item Variable Controls -->
+        <div class="product-details" style="display: flex; flex-direction: column; justify-content: center;">
+            <span class="back-link" onclick="showMainPage()" style="text-decoration: none; color: #ff4793; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; display: inline-block; cursor: pointer; width: fit-content;">← Back to Shop</span>
+            <div id="pdp-brand-target" style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #ff4793; font-weight: 700; margin-bottom: 5px;">BRAND NAME</div>
+            <h1 id="pdp-title-target" style="font-family: 'Georgia', serif; font-size: 36px; color: #000; margin-bottom: 15px; line-height: 1.2;">Product Title Line</h1>
+            <div id="pdp-price-target" style="font-size: 24px; font-weight: 700; color: #c2004d; margin-bottom: 30px;">$0.00</div>
+
+            <!-- SIZING OPTIONS -->
+            <div class="size-section" style="margin-bottom: 35px;">
+                <div class="size-label" style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; color: #555;">Select Size</div>
+                <div class="size-options" style="display: flex; gap: 10px;">
+                    <div class="size-box" onclick="selectSizeElement(this)" style="width: 48px; height: 48px; border: 2px solid #ffb7d5; border-radius: 8px; background: white; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.2s ease;">XS</div>
+                    <div class="size-box" onclick="selectSizeElement(this)" style="width: 48px; height: 48px; border: 2px solid #ffb7d5; border-radius: 8px; background: white; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.2s ease;">S</div>
+                    <div class="size-box" onclick="selectSizeElement(this)" style="width: 48px; height: 48px; border: 2px solid #ffb7d5; border-radius: 8px; background: white; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.2s ease;">M</div>
+                    <div class="size-box" onclick="selectSizeElement(this)" style="width: 48px; height: 48px; border: 2px solid #ffb7d5; border-radius: 8px; background: white; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.2s ease;">L</div>
+                </div>
+            </div>
+
+            <button class="add-to-cart-btn" onclick="incrementCartCount()" style="background: #ff4793; color: white; border: none; padding: 18px; border-radius: 50px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; box-shadow: 0 5px 15px rgba(255, 71, 147, 0.3); width: 100%; max-width: 350px; transition: all 0.3s ease;">✦ Add to Cart ✦</button>
+        </div>
+    </main>
+</div>
+
+<!-- ================= INTERACTIVE NAVIGATION ENGINE ================= -->
+<script>
+    let cartItemsCount = 0;
+
+        function openProductPage(brand, title, price, visualImage) {
+        document.getElementById('pdp-brand-target').innerText = brand;
+        document.getElementById('pdp-title-target').innerText = title;
+        document.getElementById('pdp-price-target').innerText = price;
+        document.getElementById('pdp-image-target').innerText = visualImage;
+
+        const heroSection = document.querySelector('.hero');
+        const catalogSection = document.querySelector('.catalog');
+        if(heroSection) heroSection.style.display = 'none';
+        if(catalogSection) catalogSection.style.display = 'none';
+
+        document.getElementById('product-view').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showMainPage() {
+        document.getElementById('product-view').style.display = 'none';
+        
+        const heroSection = document.querySelector('.hero');
+        const catalogSection = document.querySelector('.catalog');
+        if(heroSection) heroSection.style.display = 'grid';
+        if(catalogSection) catalogSection.style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function scrollToCatalog() {
+        showMainPage();
+        document.getElementById('catalog-section').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function selectSizeElement(element) {
+        document.querySelectorAll('.size-box').forEach(box => {
+            box.style.backgroundColor = 'white';
+            box.style.color = '#1a1a1a';
+            box.style.borderColor = '#ffb7d5';
+        });
+        element.style.backgroundColor = '#ff4793';
+        element.style.color = 'white';
+        element.style.borderColor = '#ff4793';
+    }
+
+    function incrementCartCount() {
+        cartItemsCount++;
+        const badge = document.getElementById('global-cart-badge');
+        if(badge) {
+            badge.innerText = cartItemsCount;
+            badge.style.transform = 'scale(1.4)';
+            setTimeout(() => { badge.style.transform = 'scale(1)'; }, 200);
+        }
+    }
+</script>
+
+<footer>
+    <p>&copy; 2026 APPLEKISS VAULT. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
