@@ -71,7 +71,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: relative;
         }
         .nav-links {
             display: flex;
@@ -85,13 +84,11 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            cursor: pointer;
         }
         
         /* THE LOGO */
         .logo-area {
             text-align: center;
-            cursor: pointer;
         }
         .logo-wings {
             font-size: 24px;
@@ -108,56 +105,6 @@
             display: inline-block;
             margin: 0 5px;
             text-shadow: 1px 1px 0px var(--baby-pink);
-        }
-
-        /* RESPONSIVE SHOPPING CART BUTTON */
-        .cart-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 5px;
-            color: var(--cherry-pink);
-            transition: transform 0.2s ease;
-        }
-        .cart-btn:hover {
-            transform: scale(1.1);
-        }
-        .cart-icon {
-            width: 24px;
-            height: 24px;
-            fill: none;
-            stroke: currentColor;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-        .cart-count {
-            position: absolute;
-            top: -4px;
-            right: -4px;
-            background-color: var(--barbie-pink);
-            color: white;
-            font-size: 10px;
-            font-weight: 700;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 5px rgba(255, 71, 147, 0.4);
-        }
-
-        /* --- PAGES CONTROLLER WRAPPERS --- */
-        .page-view {
-            display: none; /* Controlled via JavaScript dynamic router */
-        }
-        .page-view.active-view {
-            display: block;
         }
 
         /* --- HERO SECTION --- */
@@ -197,11 +144,6 @@
             line-height: 1.6;
             margin-bottom: 35px;
         }
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
         .btn-glass {
             display: inline-block;
             background: var(--barbie-pink);
@@ -215,12 +157,12 @@
             text-decoration: none;
             box-shadow: 0 5px 15px rgba(255, 71, 147, 0.3);
             transition: all 0.3s ease;
-            cursor: pointer;
         }
         .btn-glass:hover {
             transform: translateY(-2px);
             background-color: var(--cherry-pink);
         }
+        
         .hero-image-wrap {
             position: relative;
             text-align: center;
@@ -229,16 +171,13 @@
             width: 100%;
             max-width: 400px;
             height: 480px;
+            object-fit: cover;
             border-radius: 40px;
             border: 6px solid white;
             box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 60px;
         }
 
-        /* --- CLASSIFIED GRID CATALOG --- */
+        /* --- CLASSIFIED GRID --- */
         .catalog {
             max-width: 1200px;
             margin: 80px auto;
@@ -263,12 +202,6 @@
             border-radius: 12px;
             padding: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-            cursor: pointer;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .item-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 20px rgba(255, 71, 147, 0.1);
         }
         .item-img-container {
             width: 100%;
@@ -276,10 +209,12 @@
             background-color: var(--angel-blue);
             border-radius: 8px;
             margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 55px;
+            overflow: hidden;
+        }
+        .item-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         .item-brand {
             font-size: 11px;
@@ -297,42 +232,84 @@
             color: var(--cherry-pink);
         }
 
-        /* --- PRODUCT SEPARATE DETAIL PAGE UI --- */
-        .product-container {
-            max-width: 1000px;
-            margin: 60px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-        .product-gallery {
+        /* --- FOOTER --- */
+        footer {
+            border-top: 1px solid var(--baby-pink);
+            padding: 40px 20px;
             text-align: center;
-        }
-        .main-product-img-frame {
-            width: 100%;
-            max-width: 450px;
-            height: 520px;
-            background-color: var(--angel-blue);
-            border-radius: 24px;
-            border: 6px solid white;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 110px;
-        }
-        .product-details {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .back-link {
-            text-decoration: none;
-            color: var(--barbie-pink);
             font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-            display: inline-block;
+            color: #666;
+        }
+
+        @keyframes marquee {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
+        }
+        @media (max-width: 768px) {
+            .hero { grid-template-columns: 1fr; text-align: center; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SCROLLING ALERT MARQUEE -->
+    <div class="ticker">
+        <div class="ticker-wrap">
+            <span class="ticker-item">✦ ANGELIC DROPS EVERY TUESDAY 6PM EST ✦</span>
+            <span class="ticker-item">✨ FREE SHIPPING ON ORDERS OVER $150 ✨</span>
+            <span class="ticker-item">🍏 RARE ARCHIVE Y2K PIECES ✦</span>
+            <span class="ticker-item">✦ ANGELIC DROPS EVERY TUESDAY 6PM EST ✦</span>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION BAR -->
+    <header>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#">Shop All</a></li>
+                <li><a href="#">Dresses</a></li>
+            </ul>
+            <div class="logo-area">
+                <span class="logo-wings">ʚ</span>
+                <span class="logo-text">applekiss vault</span>
+                <span class="logo-wings">ɞ</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Archive</a></li>
+                <li><a href="#">Bag (0)</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- MAIN BRAND HERO BANNER -->
+    <section class="hero">
+        <div>
+            <div class="hero-sparkle-tag">✨ ʚ High-Glam Luxury Archive ɞ ✨</div>
+            <h1>Pre-loved clothes, curated for <span>real angels</span>.</h1>
+            <p>A pristine digital closet of authenticated early-2000s garments, designer deadstock, and iconic silhouette statements. Clean, curated, and styled to pop like luxury cosmetics.</p>
+            <a href="#" class="btn-glass">Enter Vault</a>
+        </div>
+        <div class="hero-image-wrap">
+            <img class="hero-main-img" src="https://unsplash.com" alt="Y2K Fashion">
+        </div>
+    </section>
+
+    <!-- CLOTHING PRODUCT LIST -->
+    <section class="catalog">
+        <div class="catalog-header">
+            <h2 class="catalog-title">Latest Curations 🍏</h2>
+        </div>
+        <div class="grid">
+            <!-- Product Item 1 -->
+            <div class="item-card">
+                <div class="item-img-container">
+                    <img src="https://unsplash.com" alt="Dress">
+                </div>
+                <div class="item-brand">Blumarine</div>
+                <div class="item-name">Rhinestone Slip Dress</div>
+                <div class="item-price">$240</div>
+            </div>
+            <!-- Product Item 2 -->
+            <div class="item-card">
+                <div class="item-img-container">
