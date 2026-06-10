@@ -390,7 +390,20 @@
 <script>
     let cartItemsCount = 0;
 
-        function openProductPage(brand, title, price, visualImage) {
+    // INSTRUCTIONS TO SLIDE OPEN THE MENU
+    function openCart() {
+        document.getElementById('cart-drawer').style.right = '0';
+        document.getElementById('cart-overlay').style.display = 'block';
+    }
+
+    // INSTRUCTIONS TO SLIDE CLOSE THE MENU
+    function closeCart() {
+        document.getElementById('cart-drawer').style.right = '-400px';
+        document.getElementById('cart-overlay').style.display = 'none';
+    }
+
+    // OPEN SEPARATE PRODUCT PAGE DETAIL VIEW
+    function openProductPage(brand, title, price, visualImage) {
         document.getElementById('pdp-brand-target').innerText = brand;
         document.getElementById('pdp-title-target').innerText = title;
         document.getElementById('pdp-price-target').innerText = price;
@@ -405,6 +418,7 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    // RETURN TO BACK MAIN STOREFRONT FEED
     function showMainPage() {
         document.getElementById('product-view').style.display = 'none';
         
@@ -415,11 +429,13 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    // SCROLL SMOOTHLY TO CATALOG ITEMS
     function scrollToCatalog() {
         showMainPage();
         document.getElementById('catalog-section').scrollIntoView({ behavior: 'smooth' });
     }
 
+    // SELECTION HIGHLIGHT CONTROLS FOR SIZES
     function selectSizeElement(element) {
         document.querySelectorAll('.size-box').forEach(box => {
             box.style.backgroundColor = 'white';
@@ -431,6 +447,7 @@
         element.style.borderColor = '#ff4793';
     }
 
+    // INCREMENT CART COUNT QUANTITIES
     function incrementCartCount() {
         cartItemsCount++;
         const badge = document.getElementById('global-cart-badge');
@@ -440,19 +457,8 @@
             setTimeout(() => { badge.style.transform = 'scale(1)'; }, 200);
         }
     }
-        // Open the slide-out cart menu
-    function openCart() {
-        document.getElementById('cart-drawer').style.right = '0';
-        document.getElementById('cart-overlay').style.display = 'block';
-    }
-
-    // Close the slide-out cart menu
-    function closeCart() {
-        document.getElementById('cart-drawer').style.right = '-400px';
-        document.getElementById('cart-overlay').style.display = 'none';
-    }
-
 </script>
+
 <!-- ================= SLIDE-OUT CART PANEL ================= -->
 <div id="cart-drawer" style="position: fixed; top: 0; right: -400px; width: 100%; max-width: 400px; height: 100%; background: white; box-shadow: -5px 0 15px rgba(0,0,0,0.1); z-index: 2000; transition: right 0.3s ease; padding: 30px; display: flex; flex-direction: column;">
     <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #ffb7d5; padding-bottom: 15px; margin-bottom: 20px;">
