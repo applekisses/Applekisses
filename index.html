@@ -76,6 +76,7 @@
             display: flex;
             gap: 25px;
             list-style: none;
+            align-items: center;
         }
         .nav-links a {
             text-decoration: none;
@@ -84,6 +85,7 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1.5px;
+            cursor: pointer;
         }
         
         /* THE LOGO */
@@ -143,6 +145,13 @@
             color: #444;
             line-height: 1.6;
             margin-bottom: 35px;
+        }
+        
+        /* NEW BUTTON STYLES WITH SPACER */
+        .hero-btn-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
         }
         .btn-glass {
             display: inline-block;
@@ -232,6 +241,66 @@
             color: var(--cherry-pink);
         }
 
+        /* --- SIDEBAR SHOPPING CART --- */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -350px;
+            width: 350px;
+            height: 100%;
+            background-color: var(--soft-white);
+            box-shadow: -5px 0 25px rgba(0,0,0,0.1);
+            z-index: 2000;
+            transition: right 0.3s ease;
+            padding: 30px;
+            border-left: 2px solid var(--baby-pink);
+        }
+        .cart-sidebar.open {
+            right: 0;
+        }
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--baby-pink);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        .cart-header h2 {
+            font-family: var(--font-display);
+            color: var(--cherry-pink);
+            font-style: italic;
+        }
+        .close-cart-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--barbie-pink);
+            cursor: pointer;
+        }
+        .cart-status-message {
+            color: #888888;
+            font-size: 12px;
+            text-align: center;
+            padding: 60px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.2);
+            z-index: 1999;
+            display: none;
+        }
+        .cart-overlay.open {
+            display: block;
+        }
+
         /* --- FOOTER --- */
         footer {
             border-top: 1px solid var(--baby-pink);
@@ -248,6 +317,7 @@
         @media (max-width: 768px) {
             .hero { grid-template-columns: 1fr; text-align: center; }
             .nav-links { display: none; }
+            .hero-btn-container { justify-content: center; }
         }
     </style>
 </head>
@@ -268,48 +338,3 @@
         <div class="nav-container">
             <ul class="nav-links">
                 <li><a href="#">Shop All</a></li>
-                <li><a href="#">Dresses</a></li>
-            </ul>
-            <div class="logo-area">
-                <span class="logo-wings">ʚ</span>
-                <span class="logo-text">applekiss vault</span>
-                <span class="logo-wings">ɞ</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#">Archive</a></li>
-                <li><a href="#">Bag (0)</a></li>
-            </ul>
-        </div>
-    </header>
-
-    <!-- MAIN BRAND HERO BANNER -->
-    <section class="hero">
-        <div>
-            <div class="hero-sparkle-tag">✨ ʚ High-Glam Luxury Archive ɞ ✨</div>
-            <h1>Pre-loved clothes, curated for <span>real angels</span>.</h1>
-            <p>A pristine digital closet of authenticated early-2000s garments, designer deadstock, and iconic silhouette statements. Clean, curated, and styled to pop like luxury cosmetics.</p>
-            <a href="#" class="btn-glass">Enter Vault</a>
-        </div>
-        <div class="hero-image-wrap">
-            <img class="hero-main-img" src="https://unsplash.com" alt="Y2K Fashion">
-        </div>
-    </section>
-
-    <!-- CLOTHING PRODUCT LIST -->
-    <section class="catalog">
-        <div class="catalog-header">
-            <h2 class="catalog-title">Latest Curations 🍏</h2>
-        </div>
-        <div class="grid">
-            <!-- Product Item 1 -->
-            <div class="item-card">
-                <div class="item-img-container">
-                    <img src="https://unsplash.com" alt="Dress">
-                </div>
-                <div class="item-brand">Blumarine</div>
-                <div class="item-name">Rhinestone Slip Dress</div>
-                <div class="item-price">$240</div>
-            </div>
-            <!-- Product Item 2 -->
-            <div class="item-card">
-                <div class="item-img-container">
