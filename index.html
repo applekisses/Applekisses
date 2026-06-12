@@ -249,24 +249,6 @@
             .hero { grid-template-columns: 1fr; text-align: center; }
             .nav-links { display: none; }
         }
-                /* --- DYNAMIC CART ELEMENTS --- */
-        /* Keeps your cart items layout clean and structured when added */
-        .cart-item-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-            border-bottom: 1px solid var(--baby-pink);
-        }
-        .cart-item-info h4 {
-            font-family: var(--font-display);
-            font-size: 16px;
-            margin: 2px 0;
-        }
-        .cart-item-info p {
-            font-size: 12px;
-            color: #666;
-        }
     </style>
 </head>
 <body>
@@ -331,16 +313,15 @@
         </div>
         <div class="grid">
             
-           <!-- Product Item 1: Blumarine Rhinestone Slip Dress -->
-<div class="item-card" onclick="addGarmentToBag(301, 'Blumarine', 'Rhinestone Slip Dress', 240, '👗')" style="cursor: pointer;">
-    <div class="item-img-container" style="display: flex; align-items: center; justify-content: center; background-color: var(--angel-blue); width: 100%; height: 300px; border-radius: 8px; font-size: 55px;">
-        👗
-    </div>
-    <div class="item-brand">Blumarine</div>
-    <div class="item-name">Rhinestone Slip Dress</div>
-    <div style="font-size:11px; margin-bottom: 8px; color:#666; background:#f3f4f6; display:inline-block; padding:2px 6px; border-radius:4px; font-weight:600;">One Size</div>
-    <div class="item-price">$240</div>
-</div>
+            <!-- Product Item 1: Blumarine Rhinestone Slip Dress -->
+            <div class="item-card" onclick="openProductPage('Blumarine', 'Rhinestone Slip Dress', '$240', '👗')">
+                <div class="item-img-container" style="display: flex; align-items: center; justify-content: center; background-color: var(--angel-blue); width: 100%; height: 300px; border-radius: 8px; font-size: 55px;">
+                    👗
+                </div>
+                <div class="item-brand">Blumarine</div>
+                <div class="item-name">Rhinestone Slip Dress</div>
+                <div class="item-price">$240</div>
+            </div>
 
             <!-- Product Item 2: Hysteric Glamour Cyber Mesh Top -->
             <div class="item-card" onclick="openProductPage('Hysteric Glamour', 'Vintage Cyber Graphic Mesh Top', '$125', '👚')">
